@@ -11,7 +11,7 @@ function pause(){
 }
 function timer(){
     seconds++
-    if(seconds == 10){
+    if(seconds == 60){
         minutes++
         seconds = 0
     }
