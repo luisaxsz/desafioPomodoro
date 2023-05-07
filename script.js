@@ -4,7 +4,7 @@ let seconds = 0;
 let cron;
 
 function start() {
-    cron = setInterval(timer, 100)
+    cron = setInterval(timer, 1000)
 }
 function pause(){
     cron = clearInterval(cron)
