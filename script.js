@@ -4,14 +4,14 @@ let seconds = 0;
 let cron;
 
 function start() {
-    cron = setInterval(timer, 1000)
+    cron = setInterval(timer, 100)
 }
 function pause(){
     cron = clearInterval(cron)
 }
 function timer(){
     seconds++
-    if(seconds == 60){
+    if (seconds == 60){
         minutes++
         seconds = 0
     }
