@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pomodoro</h1>
+    <p>Gerencie seu tempo de maneira mágica</p>
+  </header>  
+  <section>
+    <h2>Dados da sessão</h2>
+    <p>Acompanhe os próximos cíclos</p>
+    <div>
+        <h3>Modo atual:</h3>
+        <p>Ciclo atual do cronômetro</p>
+    </div>
+    <div>
+        <h3>Próximo modo:</h3>
+        <p>Qual cíclo será ativado</p>
+    </div>
+    <div id="clock">
+        <p id="counter">00:00</p>
+        <button onclick="start()">Iniciar</button>
+        <button onclick="pause()">Pausar</button>
+    </div>
+  </section>
+  <footer></footer>
+  <script src="script.js"></script>
+</body>
+</html>
