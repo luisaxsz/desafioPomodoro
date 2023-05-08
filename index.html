@@ -31,8 +31,10 @@
     <div class="task">
       <h2>Lista de tarefas</h2>
       <p>Seus objetivos para essa sessão</p>
-      <input type="text" placeholder="Nova tarefa">
-      <button id="addTask">Adicionar</button>
+      <div id="taskBox">
+      </div>
+      <input id='inputTask' type="text" placeholder="Nova tarefa" >
+      <button id="addTask" onclick="addTask()" type="submit">Adicionar</button>
     </div>
   </section>
   <footer></footer>
