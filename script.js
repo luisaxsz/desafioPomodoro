@@ -5,7 +5,7 @@ let durations = [25,5,25,5,25,15];
 let cron;
 
 function start() {
-   cron = setInterval(timer,10)
+   cron = setInterval(timer,1000)
 }
 
 function pause(){
