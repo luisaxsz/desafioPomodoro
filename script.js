@@ -44,6 +44,12 @@ function timer(){
     }
 }
 
+document.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        addTask()
+    }
+})
+
 function addTask() {
     let box = document.createElement('input')
     box.setAttribute('type', 'checkbox')
@@ -52,8 +58,7 @@ function addTask() {
     let task = document.getElementById('inputTask').value
     let taskBox = document.getElementById('taskBox')
     taskList.textContent = task
-
-
+    
     taskBox.appendChild(box)
     taskBox.appendChild(taskList)
     taskBox.appendChild(breakLine)
