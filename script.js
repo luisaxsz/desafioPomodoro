@@ -1,10 +1,11 @@
 let minutes = 0;
 let seconds = 0;
+let currentDurationIndex = 0;
 let durations = [25,5,25,5,25,15];
-let currentDurationIndex = 0
 let cron;
+
 function start() {
-   cron = setInterval(timer,1000)
+   cron = setInterval(timer,10)
 }
 
 function pause(){
@@ -18,23 +19,29 @@ function timer(){
         seconds = 0
     }
 
-    document.getElementById("counter").innerText = `${minutes} : ${seconds}`
-   
+    document.getElementById("counter").innerText = `${minutes} : ${seconds}`;
+
     const currentDuration = durations[currentDurationIndex];
     const durationInSeconds = currentDuration * 60;
-  
+
+    let cycle = ["Foco", "Pausa curta", "Foco", "Pausa curta", "Foco", "Pausa longa"];
+    cycle = cycle[currentDurationIndex];
+    document.getElementById("cycle").innerHTML = cycle;
+
+    let nextCycles = ["Pausa curta", "Foco", "Pausa curta", "Foco", "Pausa longa", null];
+    nextCycles = nextCycles[currentDurationIndex]
+    document.getElementById("nextCycle").innerHTML = nextCycles
+
     if (minutes * 60 + seconds === durationInSeconds) {
       currentDurationIndex++;
-      if (currentDurationIndex === durations.length) {
+      minutes = 0;
+      seconds = 0;
+    }else if (currentDurationIndex === durations.length) {
         clearInterval(cron);
         minutes = 0
         seconds = 0 
         currentDurationIndex = 0
-      }
-      minutes = 0;
-      seconds = 0;
     }
-    
 }
 
 function addTask() {
