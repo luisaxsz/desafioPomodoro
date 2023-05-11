@@ -24,13 +24,17 @@ function timer(){
     const currentDuration = durations[currentDurationIndex];
     const durationInSeconds = currentDuration * 60;
 
-    let cycle = ["Foco", "Pausa curta", "Foco", "Pausa curta", "Foco", "Pausa longa"];
-    cycle = cycle[currentDurationIndex];
-    document.getElementById("cycle").innerHTML = cycle;
+    let divCurrentCycle = document.getElementById("currentCycle")
+    
+    let currentCycle = ["Foco", "Pausa curta", "Foco", "Pausa curta", "Foco", "Pausa longa"];
+    currentCycle = currentCycle[currentDurationIndex];
+    divCurrentCycle.innerHTML = currentCycle;
+    
+    let divNextCycle = document.getElementById("nextCycle")
 
     let nextCycles = ["Pausa curta", "Foco", "Pausa curta", "Foco", "Pausa longa", null];
     nextCycles = nextCycles[currentDurationIndex]
-    document.getElementById("nextCycle").innerHTML = nextCycles
+    divNextCycle.innerHTML = nextCycles
 
     if (minutes * 60 + seconds === durationInSeconds) {
       currentDurationIndex++;
@@ -44,11 +48,6 @@ function timer(){
     }
 }
 
-document.addEventListener("keypress", function(e){
-    if(e.key === "Enter"){
-        addTask()
-    }
-})
 
 function addTask() {
     let box = document.createElement('input')
@@ -62,7 +61,12 @@ function addTask() {
     taskBox.appendChild(box)
     taskBox.appendChild(taskList)
     taskBox.appendChild(breakLine)
-
+    
     document.getElementById('inputTask').value = ""
 }
 
+document.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        addTask()
+    }
+})

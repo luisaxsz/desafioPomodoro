@@ -13,30 +13,39 @@
     <p>Gerencie seu tempo de maneira mágica</p>
   </header>  
   <section>
-    <h2>Dados da sessão</h2>
-    <p>Acompanhe os próximos cíclos</p>
-    <div id="nextCycle"></div>
-    <div>
-        <h3>Modo atual:</h3>
-        <p>Ciclo atual do cronômetro</p>
-        <div id="cycle"></div>
-    </div>
-    <div>
-        <h3>Próximo modo:</h3>
-        <p>Qual cíclo será ativado</p>
-    </div>
-    <div class="clock">
-        <p id="counter">00:00</p>
-        <button onclick="start()">Iniciar</button>
-        <button onclick="pause()">Pausar</button>
-    </div>
-    <div class="task">
-      <h2>Lista de tarefas</h2>
-      <p>Seus objetivos para essa sessão</p>
-      <div id="taskBox">
+    <div class="container">
+      <div class="divider">
+        <h2>Dados da sessão</h2>
+        <p>Acompanhe os próximos cíclos</p>
       </div>
-      <input id='inputTask' type="text" placeholder="Nova tarefa">
-      <button id="addTask" onclick="addTask()" type="submit">Adicionar</button>
+      <div class="modo">
+          <h3>Modo atual:</h3>
+          <p>Ciclo atual do cronômetro</p>
+          <div id="currentCycle"></div>
+      </div>
+      <div class="modo">
+          <h3>Próximo modo:</h3>
+          <p>Qual cíclo será ativado</p>
+          <div id="nextCycle"></div>
+      </div>
+      <div class="clock">
+          <p id="counter">00:00</p>
+          <button onclick="start()">Iniciar</button>
+          <button onclick="pause()">Pausar</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="divider">
+        <h2>Lista de tarefas</h2>
+        <p>Seus objetivos para essa sessão</p>
+      </div>
+      <div id="container-task">
+        <div id="taskBox"></div>
+      </div>
+      <div id="container-addTask">
+        <input id='inputTask' type="text" placeholder="Nova tarefa">
+        <button id="addTask" onclick="addTask()" type="submit">Adicionar</button>
+      </div>
     </div>
   </section>
   <footer></footer>
