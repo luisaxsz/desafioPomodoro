@@ -1,15 +1,24 @@
 let minutes = 0;
 let seconds = 0;
+
 let currentDurationIndex = 0;
+
 let durations = [25,5,25,5,25,15];
 let cron;
 
+let buttonStart = document.getElementById("start-button")
+let buttonPause = document.getElementById("pause-button")
+
 function start() {
    cron = setInterval(timer,1000)
+   buttonPause.style.display = "block"
+   buttonStart.style.display = "none"
 }
 
 function pause(){
     cron = clearInterval(cron)
+    buttonPause.style.display =  "none"
+    buttonStart.style.display = "block"
 }
 
 function timer(){
@@ -19,7 +28,7 @@ function timer(){
         seconds = 0
     }
 
-    document.getElementById("counter").innerText = `${minutes} : ${seconds}`;
+    document.getElementById("counter").innerText = `${minutes.toString().padStart(2, "0")} : ${seconds.toString().padStart(2, "0")}`;
 
     const currentDuration = durations[currentDurationIndex];
     const durationInSeconds = currentDuration * 60;
