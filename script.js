@@ -62,6 +62,10 @@ function addTask() {
     taskBox.appendChild(taskList)
     taskBox.appendChild(breakLine)
     
+    box.style.width = "1.5em"
+    box.style.height = "1.5em"
+    box.style.marginBottom = "1.4em" 
+    
     document.getElementById('inputTask').value = ""
 }
 
